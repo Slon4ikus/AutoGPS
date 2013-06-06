@@ -87,10 +87,10 @@ class model_info extends core_model{
 
 
     static function adminAddAboutInfo($content, $type, $order, $enabled, $class) {
-        $content = htmlspecialchars ($content, ENT_QUOTES);
+        $content = htmlentities($content, ENT_QUOTES);
         $content=core_addition::replaceBreaks($content);
-        $type = htmlspecialchars ($type, ENT_QUOTES);
-        $class = htmlspecialchars($class, ENT_QUOTES);
+        $type = htmlentities($type, ENT_QUOTES);
+        $class = htmlentities($class, ENT_QUOTES);
         $command = "INSERT INTO `about` (
             `id` ,
             `content` ,
@@ -104,10 +104,10 @@ class model_info extends core_model{
     }
 
     static function adminChangeAboutInfo($id, $content, $type, $order, $enabled, $class) {
-        $content = htmlspecialchars($content, ENT_QUOTES);
+        $content = htmlentities($content, ENT_QUOTES);
         $content=core_addition::replaceBreaks($content);
-        $type = htmlspecialchars($type, ENT_QUOTES);
-        $class = htmlspecialchars($class, ENT_QUOTES);
+        $type = htmlentities($type, ENT_QUOTES);
+        $class = htmlentities($class, ENT_QUOTES);
         $command = "UPDATE `about` SET
             `content` = '$content' ,
             `order` = '$order' ,
@@ -124,11 +124,11 @@ class model_info extends core_model{
     }
 
     static function addInfoItem($content, $brand, $category, $type, $order, $enabled, $class) {
-        $content = htmlspecialchars($content, ENT_QUOTES);
+        $content = htmlentities($content, ENT_QUOTES);
         $content=core_addition::replaceBreaks($content);
-        $brand = htmlspecialchars($brand, ENT_QUOTES);
-        $type = htmlspecialchars($type, ENT_QUOTES);
-        $class = htmlspecialchars($class, ENT_QUOTES);
+        $brand = htmlentities($brand, ENT_QUOTES);
+        $type = htmlentities($type, ENT_QUOTES);
+        $class = htmlentities($class, ENT_QUOTES);
         $command = "INSERT INTO `info` (
             `id` ,
             `category` ,
@@ -144,10 +144,10 @@ class model_info extends core_model{
     }
 
     static function changeInfoItem($id, $content, $type, $order, $enabled, $class) {
-        $content = htmlspecialchars($content, ENT_QUOTES);
+        $content = htmlentities($content, ENT_QUOTES);
         $content=core_addition::replaceBreaks($content);
-        $type = htmlspecialchars($type, ENT_QUOTES);
-        $class = htmlspecialchars($class, ENT_QUOTES);
+        $type = htmlentities($type, ENT_QUOTES);
+        $class = htmlentities($class, ENT_QUOTES);
          $command = "UPDATE `info` SET
             `info` = '$content' ,
             `order` = '$order' ,

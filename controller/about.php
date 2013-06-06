@@ -23,10 +23,11 @@ class controller_about extends core_controller
             header("Location:" . core_route::$path . "/admin/index");
             exit;
         }
-       
+
         $data['enabled'] = model_info::selectAboutInfo(1);
         $data['disabled'] = model_info::selectAboutInfo(0);
-        $data['infoTypes'] = model_info::selectAllInfoTypes();       
+        $data['infoTypes'] = model_info::selectAllInfoTypes();
+
         $this->view->generate("admin/template.php", "admin/about.php", $data);
     }
 

@@ -90,12 +90,8 @@ function findLastCharacterPos(str, ch) {
 /* brands */ /* brands *//* brands *//* brands *//* brands *//* brands *//* brands *//* brands *//* brands */
 
 function makeSelectedElement(selectId, selectedValue) { //  alert(selectedValue);
-    $("#" + selectId + " option").filter(
-        function() {
-            return $(this).html() == "" + selectedValue;
-        }).attr("selected", "selected");
-    ;
-    //$("#" + selectId).find("option:contains('" + selectedValue + "')").attr("selected", "selected");
+   $("#"+selectId+" option").filter(function() { return $(this).html() == ""+selectedValue; }).attr("selected", "selected");;
+   //$("#" + selectId).find("option:contains('" + selectedValue + "')").attr("selected", "selected");
 
 }
 
@@ -111,7 +107,7 @@ function checkBrandInfoForm(controllerUrl) {
     var pictureUrlValue = $("#newBrandInfoPictureUrl").val();
     if (nameValue != '') {
         if (pictureUrlValue != '') {
-            if (nameOldValue != nameValue) {
+            if(nameOldValue != nameValue) {
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("GET", controllerUrl + "/brand/" + nameValue, false);
                 xmlhttp.send();
@@ -135,19 +131,17 @@ function checkBrandInfoForm(controllerUrl) {
 }
 
 function changeCategoryState(brand, category, controllerUrl) {
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", controllerUrl + "/brand/" + brand + "/category/" + category, false);
-    xmlhttp.send();
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        if (xmlhttp.responseText == 'enabled') {
-            $("#status" + category).html("enabled");    // alert("ena");
-        }
-        else
-            if(xmlhttp.responseText == 'disabled') {
-                $("#status" + category).html("disabled");    // alert("dis");
-            }
-        brandStatusColor();
-    }
+     xmlhttp = new XMLHttpRequest();
+     xmlhttp.open("GET", controllerUrl+"/brand/"+brand+"/category/"+category, false);
+     xmlhttp.send();
+     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+         if(xmlhttp.responseText == 'enabled') {
+             $("#status"+category).html("enabled");    // alert("ena");
+         }
+         else {
+            $("#status"+category).html("disabled");    // alert("dis");
+         }
+     }
 }
 
 function makeTextInfoValues(info_id, info_content, info_type, info_order, info_enabled, info_class) {
@@ -185,59 +179,12 @@ function checkTextInfoForm() {
 }
 
 function assignFormValue(value, elementId) {
-    $("#" + elementId).val(value);
+    $("#"+elementId).val(value);
 }
 
-function brandStatusColor() {
-    $(".brandStatus").each(function() {
 
-        if ($(this).text() == 'enabled')
-            $(this).css('color', 'green');
-        else
-            $(this).css('color', 'red');
-    });
-}
 
-/***********************************************account******************************************/
-function checkAccountForm(controllerUrl) {
-    var oldNick = $("#oldNick").val();
-    var oldPassword = $("#oldPassword").val();
-    var newNick = $("#newNick").val();
-    var newPassword = $("#newPassword").val();
-    var newPassword2 = $("#newPassword2").val();
-    if (oldNick != '' && oldPassword != '' && newNick != '' && newPassword != '' && newPassword2 != '') {
-        if (newNick.length >= 5) {
-            if (newPassword.length >= 5) {
-                if (newPassword == newPassword2) {
-                    xmlhttp = new XMLHttpRequest();
-                    xmlhttp.open("POST", controllerUrl + "/admin/account", false);
-                    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    xmlhttp.send("oldNick=" + oldNick + "&oldPassword=" + oldPassword);
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        if (xmlhttp.responseText == 'ok') {
-                            return true;
-                        }
-                        else
-                            setErrorMessage("Неверные данные! Вы точно админ?");
-                    }
-                }
-                else
-                    setErrorMessage("Новые пароли не совпадают");
-            }
-            else
-                setErrorMessage("Новый пароль должен быть минимум в 5 сиволов");
-        }
-        else
-            setErrorMessage("Новое имя должно быть минимум в 5 сиволов");
-    }
-    else
-        setErrorMessage("Все поля должны быть заполнены");
 
-    return false;
-}
-function test5(str) {
-    alert(str);
-}
 window.onload = function() {
 
 };

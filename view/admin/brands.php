@@ -31,8 +31,8 @@
             <label for="newBrandInfoPictureUrl">Url картинки</label>
             <input id="newBrandInfoPictureUrl" class="editBrandInfoInput" name="newBrandInfoPictureUrl" value="default">
         </div>
-        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
         <button type='button' class="cancelCloseDialog" onclick="closeDialog('brandInfoDialog')">Cancel</button>
+        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
     </form>
 </div>
 <script>
@@ -86,8 +86,8 @@
             <label for="textInfoClass">Класс:</label>
             <input id="textInfoClass" class="dialogFormInput" name="textInfoClass" value="someInfo">
         </div>
-        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
         <button type='button' class="cancelCloseDialog" onclick="closeDialog('textInfoDialog')">Cancel</button>
+        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
     </form>
 </div>
 <script>
@@ -107,7 +107,7 @@
         <td> <?php echo $data['brandInfo'][0]['name'] ?> </td>
         <td><?php echo $data['brandInfo'][0]['pictureUrl'] ?> </td>
         <td>
-            <button id='changeBrandInfoButton' class="changeInfoButton" onclick="
+            <button id='changeBrandInfoButton' onclick="
                     makeDialogTitle('brandInfoDialog', 'Изменить информацию');
                     resetAndShowDialog('addNewBrandInfoForm','brandInfoDialog');
                     makeBrandInfoValues('<?php echo $data['brandInfo'][0]['name']; ?>',
@@ -118,7 +118,7 @@
         </td>
 
         <td>
-            <a  class ="deleteInfoButton" href="<?php echo core_route::$path . "/brands/adminDeleteBrand/name/" . $data['brandInfo'][0]['name'];?>"
+            <a href="<?php echo core_route::$path . "/brands/adminDeleteBrand/name/" . $data['brandInfo'][0]['name'];?>"
                onclick="return confirm('Are you sure you want to delete:  <?php echo $data['brandInfo'][0]['name'];?> brand? ALL DATA RELATED TO THIS BRAND WILL BE DELETED AS WELL!!!')">Delete</a>
         </td>
 
@@ -132,16 +132,16 @@
     echo "<div class='categoryInfoHead'>
                   <p class='category'>" . $category['name'] . "</p>
                         status:
-                        <span id='status" . $category['name'] . "'class='brandStatus'>"
+                        <span id='status" . $category['name'] . "'>"
          . ($data['existingCategories'][$category['name']] == 1 ? 'enabled' : 'disabled')
          . "</span>
-                  <button class='changeInfoButton' onclick=\"changeCategoryState(
+                  <button onclick=\"changeCategoryState(
                                     '" . $data['brandInfo'][0]['name'] . "',
                                     '" . $category['name'] . "',
                                     '" . core_route::$path . "/brandCategory/adminChangeState" . "')
                             \">Change state
                   </button>
-                  <button class='addInfoButton' onclick=\"
+                  <button id='addNewTextInfoButton' onclick=\"
                                             changeFormAction('textInfoForm','adminAddItem')
                                             resetAndShowDialog('textInfoForm','textInfoDialog');
                                             makeDialogTitle('textInfoDialog', 'Добавить информацию')
@@ -164,19 +164,19 @@
                     <tr><td><span class='infoStatus'>Enabled:</span></tr><td>";
 
     foreach ($data['infoTypes'] as $infoType) {
-        echo "<tr><td class='infoType'>" . $infoType['name'] . "</tr></td>";
+        echo "<tr><td>" . $infoType['name'] . "</tr></td>";
         if (empty($data['textInfo']['enabled'][$category['name']][$infoType['name']]))
             echo "<tr><td></td><td class='noInfo'>None</td></tr>";
         else
             foreach ($data['textInfo']['enabled'][$category['name']][$infoType['name']] as $info) {
-                echo "<tr class='rowInfo'>
+                echo "<tr>
                               <td></td><td></td>
                               <td>" . $info['id'] . "</td>
                               <td>" . $info['info'] . "</td>
                               <td>" . $info['order'] . "</td>
                               <td>" . $info['class'] . "</td>
                               <td>
-                                <button class='changeInfoButton' onclick=\"
+                                <button onclick=\"
                                 makeDialogTitle('textInfoDialog', 'Изменить информацию')
                                 resetAndShowDialog('textInfoForm','textInfoDialog');
                                 makeTextInfoValues(
@@ -191,7 +191,7 @@
                                \">Change</button>
                                </td>
                                <td>
-                                <a class='deleteInfoButton' href='" . core_route::$path . "/info/adminDeleteItem/id/" . $info['id']
+                                <a href='" . core_route::$path . "/info/adminDeleteItem/id/" . $info['id']
                      . "/brand/" . $data['brandInfo'][0]['name']
                      . "' onclick=\"return confirm('Are you sure you want to delete: "
                      . $info['id'] . " info?')\">Delete</a>
@@ -201,19 +201,19 @@
     }
     echo "<tr><td><span class='infoStatus'>Disabled:</span></tr><td>";
     foreach ($data['infoTypes'] as $infoType) {
-        echo "<tr><td class='infoType'>" . $infoType['name'] . "</tr></td>";
+        echo "<tr><td>" . $infoType['name'] . "</tr></td>";
         if (empty($data['textInfo']['disabled'][$category['name']][$infoType['name']]))
             echo "<tr><td></td><td class='noInfo'>None</td></tr>";
         else
             foreach ($data['textInfo']['disabled'][$category['name']][$infoType['name']] as $info) {
-                echo "<tr class='rowInfo'>
+                echo "<tr>
                               <td></td><td></td>
                               <td>" . $info['id'] . "</td>
                               <td>" . $info['info'] . "</td>
                               <td>" . $info['order'] . "</td>
                               <td>" . $info['class'] . "</td>
                               <td>
-                                <button class='changeInfoButton' onclick=\"
+                                <button onclick=\"
                                 makeDialogTitle('textInfoDialog', 'Изменить информацию')
                                 resetAndShowDialog('textInfoForm','textInfoDialog');
                                 makeTextInfoValues(
@@ -228,7 +228,7 @@
                                \">Change</button>
                                </td>
                                <td>
-                                <a class='deleteInfoButton' href='" . core_route::$path . "/info/adminDeleteItem/id/" . $info['id']
+                                <a href='" . core_route::$path . "/info/adminDeleteItem/id/" . $info['id']
                      . "/brand/" . $data['brandInfo'][0]['name']
                      . "' onclick=\"return confirm('Are you sure you want to delete: "
                      . $info['id'] . " info?')\">Delete</a>
@@ -239,9 +239,6 @@
 
 
     echo"</tbody>
-         </table><div class='divForBorder'></div>";
+         </table>";
 }
 ?>
-<script>
-    brandStatusColor();
-</script>

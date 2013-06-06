@@ -14,7 +14,7 @@ class controller_info extends core_controller {
                 $data["brand"] = $paramValues[0];
                 $data["mainInfo"] = model_info::findAllText($paramValues[0], 1);
                 $data["existingCategories"] = model_info::checkForCategories($paramValues[0]);
-                $data['scroll'] = $paramValues[1];
+
 
                 $this->view->generate("template.php", "info.php", $data);
         }

@@ -1,13 +1,13 @@
-<button id="addNewAboutInfoButton" onclick="resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
+<button id="addNewAboutInfoButton" onclick="resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
                                             makeDialogTitle('aboutInfoDialog', 'Добавить информацию')">
-    Добавить инфо &ldquo;О нас&rdquo;
+    Add new about info
 </button>
 <div class="clear">
 </div>
 <div id="aboutInfoDialog">
-    <p class="errorMessage"></p>
+    <p id="errorMessage"></p>
 
-    <form id="aboutInfoForm" class="editAboutInfoForm" name="aboutInfoForm"
+    <form id="addNewAboutInfoForm" class="editAboutInfoForm" name="addNewAboutInfoForm"
           action="<?php echo core_route::$path;?>/about/adminAddItem"
           onsubmit="return checkAboutInfoForm()" method="post">
         <input id="newAboutInfoId" name="newAboutInfoId" type="hidden">
@@ -47,10 +47,8 @@
             <label for="newAboutInfoClass">Класс:</label>
             <input id="newAboutInfoClass" class="editAboutInfoInput" name="newAboutInfoClass" value="someInfo">
         </div>
-        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
         <button type='button' class="cancelCloseDialog" onclick="closeDialog('aboutInfoDialog')">Cancel</button>
-        <div class="clear">
-        </div>
+        <input class="saveButton" type="submit" name="saveButton" value="Save"/>
     </form>
 </div>
 <script>
@@ -58,7 +56,7 @@
 </script>
 
 
-<h2 class="infoStatus">Enabled:</h2>
+<h2>Enabled:</h2>
 <table class="aboutTable">
     <thead>
     <tr>
@@ -73,23 +71,23 @@
     <tbody>
                 <?php
                        foreach ($data['infoTypes'] as $infoType) {
-                    echo "<tr><td class='infoType'>" . $infoType['name'] . "</td></tr>";
+                    echo "<tr><td>" . $infoType['name'] . "</td></tr>";
                     if (empty($data['enabled'][$infoType['name']])) {
                         echo "<tr><td></td><td class='noInfo'>None</td></tr>";
                     }
                     else {
                         foreach ($data['enabled'][$infoType['name']] as $info) {
 
-                            echo "<tr class='rowInfo'>
+                            echo "<tr>
                               <td></td><td></td>
                               <td>" . $info['id'] . "</td>
                               <td>" . $info['content'] . "</td>
                               <td>" . $info['order'] . "</td>
                               <td>" . $info['class'] . "</td>
                               <td>
-                                <button class='changeInfoButton' onclick=\"
+                                <button id='changeAboutInfoButton' onclick=\"
                                 makeDialogTitle('aboutInfoDialog', 'Изменить информацию');
-                                resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
+                                resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
                                     '" . $info['content'] . "',
@@ -98,11 +96,11 @@
                                     '" . $info['enabled'] . "',
                                     '" . $info['class'] . "'
                                 );
-                                changeFormAction('aboutInfoForm','adminChangeItem')
+                                changeFormAction('addNewAboutInfoForm','adminChangeItem')
                                 \">Change</button>
                               </td>
                               <td>
-                                <a class='deleteInfoButton' href='" . core_route::$path . "/about/adminDeleteItem/id/" . $info['id']
+                                <a href='" . core_route::$path . "/about/adminDeleteItem/id/" . $info['id']
                                  . "' onclick=\"return confirm('Are you sure you want to delete: "
                                  . $info['id'] . " info?')\">Delete</a>
                               </td>
@@ -113,9 +111,8 @@
                 ?>
     </tbody>
 </table>
-<div class="divForBorder">
-</div>
-<h2 class="infoStatus">Disabled:</h2>
+
+<h2>Disabled:</h2>
 <table class="aboutTable">
     <thead>
     <tr>
@@ -130,22 +127,22 @@
     <tbody>
                 <?php
                        foreach ($data['infoTypes'] as $infoType) {
-                    echo "<tr><td class='infoType'>" . $infoType['name'] . "</td></tr>";
-                    if (empty($data['disabled'][$infoType['name']])) {
+                    echo "<tr><td>" . $infoType['name'] . "</td></tr>";
+                    if (empty($data['enabled'][$infoType['name']])) {
                         echo "<tr><td></td><td class='noInfo'>None</td></tr>";
                     }
                     else {
                         foreach ($data['disabled'][$infoType['name']] as $info) {
 
-                            echo "<tr class='rowInfo'>
+                            echo "<tr>
                               <td></td><td></td>
                               <td>" . $info['id'] . "</td>
                               <td>" . $info['content'] . "</td>
                               <td>" . $info['order'] . "</td>
                               <td>" . $info['class'] . "</td>
                               <td>
-                                <button class='changeInfoButton' onclick=\"
-                                resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
+                                <button id='changeAboutInfoButton' onclick=\"
+                                resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
                                     '" . $info['content'] . "',
@@ -154,11 +151,11 @@
                                     '" . $info['enabled'] . "',
                                     '" . $info['class'] . "'
                                 );
-                                changeFormAction('aboutInfoForm','adminChangeItem')
+                                changeFormAction('addNewAboutInfoForm','adminChangeItem')
                                 \">Change</button>
                               </td>
                               <td>
-                                <a class='deleteInfoButton' href='" . core_route::$path . "/about/adminDeleteItem/id/" . $info['id']
+                                <a href='" . core_route::$path . "/about/adminDeleteItem/id/" . $info['id']
                                  . "' onclick=\"return confirm('Are you sure you want to delete: "
                                  . $info['id'] . " info?')\">Delete</a>
                               </td>

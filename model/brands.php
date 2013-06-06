@@ -20,7 +20,7 @@ class model_brands extends core_model
     }
 
     public static function getAllBrands() {
-        $query = "SELECT * FROM brands ORDER BY brands.name";
+        $query = "SELECT * FROM brands";
         $result = self::doQuery($query);
         return core_addition::fetchArr($result);
        }
@@ -47,13 +47,14 @@ class model_brands extends core_model
     }
 
     public static function changeBrandInfo($oldName, $newName, $pictureUrl) {
-         $newName = htmlspecialchars($newName, ENT_QUOTES);
-         $pictureUrl = htmlspecialchars($pictureUrl, ENT_QUOTES);
+         $newName = htmlentities($newName, ENT_QUOTES);
+         $pictureUrl = htmlentities($pictureUrl, ENT_QUOTES);
          $command = "UPDATE `brands` SET
                      `name` = '$newName' ,
                      `pictureUrl` = '$pictureUrl'
                      WHERE `name`='$oldName'";
         core_model::upDate($command);
+        self::checkForErrors();
     }
 
     public static function deleteBrand($name) {
