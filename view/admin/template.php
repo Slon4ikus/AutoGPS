@@ -20,35 +20,37 @@
     </script>
 </head>
 <body>
-<div class="mainContainer">
+<div class="headerContainer">
     <div class="header">
-        <h1>панель админа</h1>
-
+        <h1 class="welcomeAdmin">Панель админа</h1>
+         <div class="logout">
+            <a href="<?php echo core_route::$path . "/admin/logout"?>">Выйти</a>
+        </div>
+        <div class="clear">
+        </div>
         <div class="navigation">
             <a href="<?php echo core_route::$path . "/about/adminShow"?>">О нас</a>
             <a href="<?php echo core_route::$path . "/brands/adminList"?>">Бренды</a>
             <div class="clear">
             </div>
         </div>
-        <div class="logout">
-            <a href="<?php echo core_route::$path . "/admin/logout"?>">Выйти</a>
-        </div>
         <div class="clear">
         </div>
     </div>
-    <div class="content">
-        <div class="systemMessageDiv">
-            <p class="systemMessage">
-                <?php
-                            if (isset($_SESSION['message'])) {
-                echo $_SESSION['message']['type'] . ": " . $_SESSION['message']['text'];
-                unset($_SESSION['message']);
-            }
-                ?>
-            </p>
-        </div>
-        <?php include 'view/' . $content; ?>
+</div>
+<div class="content">
+    <div class="systemMessageDiv">
+        <p class="systemMessage">
+            <?php
+                                        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message']['type'] . ": " . $_SESSION['message']['text'];
+            unset($_SESSION['message']);
+        }
+            ?>
+        </p>
     </div>
+    <?php include 'view/' . $content; ?>
+</div>
 
 
 </div>

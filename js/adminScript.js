@@ -182,6 +182,9 @@ function assignFormValue(value, elementId) {
     $("#"+elementId).val(value);
 }
 
+function getFormInputPostion(){
+
+}
 
 
 

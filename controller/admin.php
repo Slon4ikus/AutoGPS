@@ -16,7 +16,7 @@ class controller_admin extends core_controller
             if (!empty($_POST['username']) and !empty($_POST['password'])) {
                 if (core_auth::login($_POST['username'], $_POST['password'])) {
                     if (core_auth::isAdmin()) {
-                        header("Location:" . core_route::$path . "/admin/home");
+                        header("Location:" . core_route::$path . "/about/adminShow");
                         exit;
                     }
                     else {
@@ -30,7 +30,9 @@ class controller_admin extends core_controller
                 core_addition::setSessionMessage("Вход", "Не заполнены нужные поля");
             }
         }
-
+        if (core_auth::isAdmin()) {
+             header("Location:" . core_route::$path . "/about/adminShow");
+        }
         $this->view->generate("template.php", "login.php");
     }
 
@@ -48,15 +50,6 @@ class controller_admin extends core_controller
 
         }
         $this->view->generate("template.php", "registration.php");
-    }
-
-    function home() {
-      if (!core_auth::isAdmin()) {
-        core_addition::setSessionMessage("Страница админа", "У вас нет на это прав");
-        header("Location:" . core_route::$path . "/admin/index");
-        exit;
-      }
-     $this->view->generate("admin/template.php", "admin/home.php");
     }
 
 

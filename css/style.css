@@ -1,42 +1,86 @@
 .clear{
     clear: both;
 }
+.hidden {
+    display: none;
+}
 body{
-  background-image: url("../images/template/blue.png");
-  background-repeat: repeat-x;
-  font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
 }
-.mainContainer{
-    width: 1024px;
-    min-width: 1024px;
-    max-width: 1600px;
-    margin: 0 auto;
+.headerContainer{
+    background-color: #06063f;
 }
-.header{
-    height: 158px;
+.headerContainer2{
+  background-image: url("../images/template/header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1024px;
+  margin: 0 auto;
+}
+.headerContent{
+    
+}
+.mainContent{
+   width: 964px;
+   margin: 0 auto;
+   padding: 20px 30px 30px 30px;
+   background-color: #EDEDED;
+   min-height: 1000px;
+}
+.footerContainer{
+    background-image: url(../images/template/asphalt.png);
+    background-repeat: repeat;
+}
+.footerContent {
+   width: 1024px;
+   margin: 0 auto;
+}   
+.footerColumn{
+    float: left;
+    margin: 40px 150px 20px 0px;
+}
+.headerHat {
+    float: left;
 }
 .logo{
    display: block;
-   float: left;
-   width: 235px;
-   height: 91px;
-   background-image: url(../images/template/yellow.png);
+   width: 197px;
+   height: 101px;
+   background-image: url(../images/template/logo.png);
    background-repeat: no-repeat;
+   margin: 0px 0px 0px 20px;
 }
-.phone{
-    margin: 20px 0px 0px 40px;
+.slogan{
+    float: left;
+    font-size: 20px;
+    font-style: italic;
+    color: #EEEEEE;
+    font-weight: bold;
+    margin: 0px 0px 5px 20px;
 }
 .headerPhone{
     float: left;
-    color: #eeeeee;
+    margin: 30px 0px 0px 70px;
 }
 .numberFirstPart {
-    color: #aaaaaa;
-    font-size: 20px;
+    color: #AAAAAA;
+    font-size: 26px;
+    font-weight: bold;
 }
 .numberSecondPart {
-    color: #dddddd;
-    font-size: 24px;
+    color: #CCCCCC;
+    font-size: 30px;
+    font-weight: bold;
+}
+#headerSlider {
+    float: right;
+    width:400px;
+    max-height: 130px;
+    overflow: hidden;
+    margin: 0px 20px 0px 0px;
+}
+.sliderImage {
+    float: right;
 }
 .accountOptions a{
     margin: 0px 10px 0px 0px;
@@ -51,14 +95,21 @@ body{
     margin: 0px 0px 10px 0px;
 }
 .navigation{
-    background-image: url(../images/template/brown.png);
-    background-repeat: repeat-x;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #666688;
+    background-repeat: repeat;
 }
 .navigation a{
     display: block;
     float: left;
-    padding: 15px 20px 15px 20px;
-    margin: auto;
+    margin: 10px 0px 10px 0px;
+    padding: 15px 42px 15px 42px;
+    background-repeat: repeat;
+    border-left: 1px solid #AAAAAA;
+}
+.navigation a:first-child{
+    border-left: none;
 }
 .systemMessage {
     padding: 20px 0px;
@@ -66,17 +117,7 @@ body{
     color: #ff0000;
     font-size: 14px;
 }
-.content{
-    min-height: 500px;
-}
-.footer{
-    background-image: url(../images/template/yellow.png);
-    background-repeat: repeat;
-}
-.footerColumn{
-    float: left;
-    margin: 40px 150px 20px 0px;
-}
+
 .loginLabelDiv, .registrationLabelDiv{
     float: left;
     margin: 20px 20px 0px 0px;
@@ -100,12 +141,52 @@ body{
     min-height: 20px;
     border: 2px solid #555555;
 }
+
+/**********************************************about************************************/
+.someInfo {
+    margin: 10px;
+}
+
+/**********************************************brands************************************/
+.brandList{
+    border: 3px solid #AAAAAA;
+    border-radius: 10px;
+    padding: 30px;
+}
 .brandList li{
-  float: left;
-  display: block;
-  margin: 0px 100px 40px 0px;
-  text-align: center;
+    padding: 10px 15px 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    float: left;
+    display: block;
+    margin: 0px 100px 40px 0px;
+    text-align: center;
 }
-.brandList h3{
-    margin:  20px 0px 0px 0px;
+.brandImage {
+    
 }
+.brandName {
+    font-weight: bold;
+    font-size: 20px;
+    color: #666666;
+    margin:  30px 0px 20px 0px;;
+}
+
+/*******************************************info**************************************/
+.infoHead {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px 0px 20px 0px;
+}
+.gpsInfoDiv, .russificationInfoDiv, .otherInfoDiv{
+    margin: 0px 0px 30px 0px;
+}
+.gpsPrimaryText, .gpsSecondaryText, .rusPrimaryText, .rusSecondaryText, .otherPrimartText, .otherSecondaryText{
+    margin: 0px 0px 10px 0px;
+}
+
+/*****************************************contacts*******************************************/
+.contactsPhone, .contactsAdress, .contactsEmail {
+    margin: 0px 0px 20px 0px;
+}
+
+

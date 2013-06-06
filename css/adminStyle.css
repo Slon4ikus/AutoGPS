@@ -1,32 +1,58 @@
-body{
-  background-image: url("../images/template/blue.png");
-  background-repeat: repeat-x;
+.clear{
+    clear: both;
 }
-.mainContainer{
-    width: 1024px;
-    min-width: 1024px;
-    max-width: 1600px;
-    margin: 0 auto;
+.headerContainer {
+     background-color: #9999CC;
 }
 .header{
+    width: 1024px;
+    margin: 0 auto;
     height: 158px;
 }
+.welcomeAdmin{
+    font-weight: bold;
+    font-size: 25px;
+    float: left;
+}
+.logout{
+    display: block;
+    float: right;
+    margin: 40px 0px 0px 0px;
+    font-size: 19px;
+}
 .navigation{
-    background-image: url(../images/template/brown.png);
-    background-repeat: repeat-x;
+    margin: 40px 0px 0px 0px;
 }
 .navigation a{
     display: block;
     float: left;
-    padding: 15px 20px 15px 20px;
-    margin: auto;
+    background-color: #888888;
+    padding: 10px;
+    margin: 0px 20px 0px 0px;
+    color: white;
+    font-size: 20px;
+}
+.content{
+    width: 1024px;
+    margin: 0 auto;
+    background-color: #EDEDED;
+    padding: 15px;
 }
 
 /* about */
+.divForBorder{
+    border-top: 3px solid black;
+}
 #addNewAboutInfoButton, #addNewBrandInfoButton {
     float: right;
     height: 30px;
     border: 1px solid black;
+    padding: 0px 5px 0px 5px;
+    background-color: #F98719;
+}
+.infoType {
+    font-style: italic;
+    font-size: 17px;
 }
 .editAboutInfoDiv, .editBrandInfoDiv, .dialogFormDiv{
     margin: 10px 0px 10px 0px;
@@ -45,15 +71,34 @@ body{
     max-width: 740px;
     height: 130px
 }
+.aboutTable, .brandInfoTable, .infoTable {
+    margin: 0px 0px 30px 0px;
+}
 .aboutTable thead, .brandInfoTable thead, .infoTable thead{
    padding: 20px;
    font-weight: bold;
    font-size: 20px;
 }
 .aboutTable td, .brandInfoTable td, .infoTable td{
-   padding: 20px;
+   padding: 7px 15px 7px 15px;
+   max-width: 300px;
+   overflow: hidden;
 }
-
+.rowInfo{
+    border-bottom: 1px solid #AAAAAA;
+}
+.changeInfoButton{
+    cursor: pointer;
+    padding: 2px 6px;
+    background-color: #D9D919;
+    border: 1px solid #666666;
+}
+.deleteInfoButton{
+    cursor: pointer;
+    padding: 2px 6px;
+    background-color: #EE2C2C;
+    border: 1px solid #666666;
+}
 .submit {
     margin: 20px 0px 0px 0px;
     min-width: 50px;
@@ -79,6 +124,8 @@ body{
     font-weight: bold;
 }
 .infoStatus {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
+    margin: 20px 0px 0px;
+    padding: 10px 0px 0px 0px;
 }

@@ -141,7 +141,7 @@
                                     '" . core_route::$path . "/brandCategory/adminChangeState" . "')
                             \">Change state
                   </button>
-                  <button id='addNewTextInfoButton' onclick=\"
+                  <button onclick=\"
                                             changeFormAction('textInfoForm','adminAddItem')
                                             resetAndShowDialog('textInfoForm','textInfoDialog');
                                             makeDialogTitle('textInfoDialog', 'Добавить информацию')

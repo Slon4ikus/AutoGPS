@@ -4,11 +4,13 @@
         echo
         "<li>
             <a href='".core_route::$path."/info/index/name/".$brand['name']."/scroll/".$data["url"]."'>
-                <img src='".core_route::$path."/images/brands/".$brand['pictureUrl'].".png'>
-                <h3>".$brand["name"]."</h3>
+                <img class='brandImage' src='".core_route::$path."/images/brands/".$brand['pictureUrl'].".png'>
+                <h3 class='brandName'>".$brand["name"]."</h3>
             </a>
         </li>";
 
     }
 ?>
+    <div class="clear">
+    </div>
 </ul>
