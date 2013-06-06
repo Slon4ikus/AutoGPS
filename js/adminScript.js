@@ -143,9 +143,9 @@ function changeCategoryState(brand, category, controllerUrl) {
             $("#status" + category).html("enabled");    // alert("ena");
         }
         else
-            if(xmlhttp.responseText == 'disabled') {
-                $("#status" + category).html("disabled");    // alert("dis");
-            }
+        if (xmlhttp.responseText == 'disabled') {
+            $("#status" + category).html("disabled");    // alert("dis");
+        }
         brandStatusColor();
     }
 }

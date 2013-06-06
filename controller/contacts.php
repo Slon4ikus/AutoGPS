@@ -7,9 +7,11 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class controller_contacts extends core_controller {
-    public function showContacts() {
-     $this->view->generate("template.php", "contacts.php", '');
+class controller_contacts extends core_controller
+{
+    public function showContacts()
+    {
+        $this->view->generate("template.php", "contacts.php", '');
     }
 
 }

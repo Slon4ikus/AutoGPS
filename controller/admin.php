@@ -31,8 +31,8 @@ class controller_admin extends core_controller
             }
         }
         if (core_auth::isAdmin()) {
-             header("Location:" . core_route::$path . "/about/adminShow");
-             exit;
+            header("Location:" . core_route::$path . "/about/adminShow");
+            exit;
         }
         $this->view->generate("template.php", "login.php");
     }
@@ -52,34 +52,37 @@ class controller_admin extends core_controller
         }
         $this->view->generate("template.php", "registration.php");
     }
-    function account($paramNames, $paramValues) {
+
+    function account($paramNames, $paramValues)
+    {
         if (!core_auth::isAdmin()) {
-             header("Location:" . core_route::$path . "/about/index");
-             exit;
+            header("Location:" . core_route::$path . "/about/index");
+            exit;
         }
         if ($_POST) {
-            if(!empty($_POST['oldNick']) && !empty($_POST['oldPassword']))
-                if (core_auth::checkAdminAccount($_POST['oldNick'], $_POST['oldPassword']))
-                     {
-                        echo 'ok';
-                        exit;
-                    }
+            if (!empty($_POST['oldNick']) && !empty($_POST['oldPassword']))
+                if (core_auth::checkAdminAccount($_POST['oldNick'], $_POST['oldPassword'])) {
+                    echo 'ok';
+                    exit;
+                }
             echo 'no';
             exit;
         }
         $this->view->generate("admin/template.php", "admin/account.php");
     }
 
-    function changeAccount() {
+    function changeAccount()
+    {
         if (!core_auth::isAdmin()) {
-             header("Location:" . core_route::$path . "/about/index");
+            header("Location:" . core_route::$path . "/about/index");
             exit;
         }
         if ($_POST) {
-            if(!empty($_POST['newNick']) and !empty($_POST['newPassword'])  and
-               !empty($_POST['oldNick']) and !empty($_POST['oldPassword']))
-                if(strlen($_POST['newNick']) >= 5 and strlen($_POST['newPassword']) >= 5)
-                    if(core_auth::checkAdminAccount($_POST['oldNick'], $_POST['oldPassword']) ) {
+            if (!empty($_POST['newNick']) and !empty($_POST['newPassword'])  and
+                                              !empty($_POST['oldNick']) and !empty($_POST['oldPassword'])
+            )
+                if (strlen($_POST['newNick']) >= 5 and strlen($_POST['newPassword']) >= 5)
+                    if (core_auth::checkAdminAccount($_POST['oldNick'], $_POST['oldPassword'])) {
                         core_auth::changeAccount($_POST['oldNick'], $_POST['newNick'], $_POST['newPassword']);
                         core_addition::setSessionMessage('Account change', 'success');
                     }

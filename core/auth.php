@@ -87,19 +87,22 @@ class core_auth
         }
     }
 
-    static function checkAdminAccount($username,$password) {
+    static function checkAdminAccount($username, $password)
+    {
         $query = "SELECT status, password
                   FROM users WHERE username = '$username'";
         $result = core_model::doQuery($query);
         if ($result->num_rows != 0) {
             $userInfo = $result->fetch_array();
             if (crypt($password, $userInfo['password']) == $userInfo['password'])
-                if($userInfo['status']==3)
+                if ($userInfo['status'] == 3)
                     return true;
         }
-         return false;
+        return false;
     }
-    static function changeAccount($oldName, $newName, $newPassword) {
+
+    static function changeAccount($oldName, $newName, $newPassword)
+    {
         $hashedPassword = crypt($newPassword);
         $command = "UPDATE `users` SET
                      `username` = '$newName' ,

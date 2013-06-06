@@ -1,29 +1,35 @@
-.clear{
+.clear {
     clear: both;
 }
+
 .headerContainer {
-     background-color: #9999CC;
+    background-color: #9999CC;
 }
-.header{
+
+.header {
     width: 1024px;
     margin: 0 auto;
     height: 158px;
 }
-.welcomeAdmin{
+
+.welcomeAdmin {
     font-weight: bold;
     font-size: 25px;
     float: left;
 }
-.logout{
+
+.logout {
     display: block;
     float: right;
     margin: 40px 0px 0px 0px;
     font-size: 19px;
 }
-.navigation{
+
+.navigation {
     margin: 40px 0px 0px 0px;
 }
-.navigation a{
+
+.navigation a {
     display: block;
     float: left;
     background-color: #888888;
@@ -33,7 +39,8 @@
     font-size: 20px;
     border: 1px solid #666666;
 }
-.content{
+
+.content {
     width: 1024px;
     min-height: 1000px;
     margin: 0 auto;
@@ -42,9 +49,10 @@
 }
 
 /* about */
-.divForBorder{
+.divForBorder {
     border-top: 3px solid black;
 }
+
 #addNewAboutInfoButton, #addNewBrandInfoButton {
     float: right;
     height: 30px;
@@ -52,20 +60,24 @@
     padding: 0px 5px 0px 5px;
     background-color: #F98719;
 }
+
 .infoType {
     font-style: italic;
     font-size: 17px;
 }
-.editAboutInfoDiv, .editBrandInfoDiv, .dialogFormDiv{
+
+.editAboutInfoDiv, .editBrandInfoDiv, .dialogFormDiv {
     margin: 10px 0px 10px 0px;
 }
-.editAboutInfoDiv label, .editBrandInfoDiv label, .dialogFormDiv label  {
+
+.editAboutInfoDiv label, .editBrandInfoDiv label, .dialogFormDiv label {
     margin: 0px 20px 0px 0px;
     display: block;
     float: left;
-    width:125px;
+    width: 125px;
     text-align: left;
 }
+
 .cancelCloseDialog {
     display: block;
     float: right;
@@ -75,6 +87,7 @@
     cursor: pointer;
     margin: 0px 20px 20px 0px;
 }
+
 .saveButton {
     display: block;
     float: right;
@@ -84,43 +97,52 @@
     cursor: pointer;
     margin: 0px 20px 20px 0px;
 }
+
 .editAboutInfoTextArea, .editAboutInfoSelect, .editAboutInfoInput, .editBrandInfoInput,
 .dialogFormTextArea, .dialogFormSelect, .dialogFormInput {
     border: 1px solid black;
 }
+
 .editAboutInfoTextArea, .dialogFormTextArea {
     width: 440px;
     max-width: 740px;
     height: 130px
 }
+
 .aboutTable, .brandInfoTable, .infoTable {
     margin: 0px 0px 10px 0px;
 }
-.aboutTable thead, .brandInfoTable thead, .infoTable thead{
-   padding: 20px;
-   font-weight: bold;
-   font-size: 20px;
+
+.aboutTable thead, .brandInfoTable thead, .infoTable thead {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
-.aboutTable td, .brandInfoTable td, .infoTable td{
-   padding: 7px 15px 7px 15px;
-   max-width: 300px;
-   overflow: hidden;
+
+.aboutTable td, .brandInfoTable td, .infoTable td {
+    padding: 7px 15px 7px 15px;
+    max-width: 300px;
+    overflow: hidden;
 }
-.rowInfo{
+
+.rowInfo {
     border-bottom: 1px solid #AAAAAA;
 }
-.changeInfoButton{
+
+.changeInfoButton {
     cursor: pointer;
     padding: 2px 6px;
     background-color: #D9D919;
     border: 1px solid #666666;
 }
-.deleteInfoButton{
+
+.deleteInfoButton {
     cursor: pointer;
     padding: 2px 6px;
     background-color: #EE2C2C;
     border: 1px solid #666666;
 }
+
 .submit {
     margin: 20px 0px 0px 0px;
     min-width: 50px;
@@ -131,65 +153,77 @@
 /***************************************** brand *******************************************************************/
 #selectBrand {
     margin: 0px 0px 30px 0px;
-    border:  1px solid #D9A719;
+    border: 1px solid #D9A719;
 }
+
 .categoryInfoHead {
     font-size: 18px;
     margin: 0px 0px 20px 0px;
 }
+
 .brandStatus {
     font-weight: bold;
     font-size: 18px;
     font-style: italic;
     margin: 0px 7px 0px 5px;
 }
-.addInfoButton{
+
+.addInfoButton {
     cursor: pointer;
     padding: 2px 6px;
     background-color: #00CD00;
     border: 1px solid #666666;
     margin: 0px 0px 0px 10px;
 }
-.brandInfoTable{
+
+.brandInfoTable {
     padding: 0px 0px 10px 0px;
     margin: 0px 0px 50px 0px;
     border-bottom: 1px solid black;
 }
-.category{
+
+.category {
     color: blue;
     margin: 20px 0px 10px 0px;
     font-size: 25px;
     font-weight: bold;
     font-style: italic;
 }
+
 .infoStatus {
     font-size: 22px;
     font-weight: bold;
     margin: 20px 0px 0px;
     padding: 10px 0px 0px 0px;
 }
+
 /***************************************** account *******************************************************************/
-.accountForm{
+.accountForm {
     margin: 20px 0px 0px 0px;
 }
-.accountFormDiv{
-     margin: 10px 0px 10px 0px;
+
+.accountFormDiv {
+    margin: 10px 0px 10px 0px;
 }
-.accountForm label  {
+
+.accountForm label {
     margin: 0px 20px 0px 0px;
     display: block;
     float: left;
-    width:150px;
+    width: 150px;
     text-align: left;
 }
-.accountInput{
-     border: 1px solid black;
+
+.accountInput {
+    border: 1px solid black;
 }
-.errorMessage{
+
+.errorMessage {
     color: red;
     font-size: 16px;
 }
-.systemMessage{
+
+.systemMessage {
     background: yellow;
     width: 200px;
 }

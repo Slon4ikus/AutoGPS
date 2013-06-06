@@ -23,7 +23,8 @@
 <div class="headerContainer">
     <div class="header">
         <h1 class="welcomeAdmin">Панель админа</h1>
-         <div class="logout">
+
+        <div class="logout">
             <a href="<?php echo core_route::$path . "/admin/logout"?>">Выйти</a>
         </div>
         <div class="clear">
@@ -32,6 +33,7 @@
             <a href="<?php echo core_route::$path . "/about/adminShow"?>">О нас</a>
             <a href="<?php echo core_route::$path . "/brands/adminList"?>">Бренды</a>
             <a href="<?php echo core_route::$path . "/admin/account"?>">Аккаунт</a>
+
             <div class="clear">
             </div>
         </div>

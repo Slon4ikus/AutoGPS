@@ -33,6 +33,8 @@
         </div>
         <input class="saveButton" type="submit" name="saveButton" value="Save"/>
         <button type='button' class="cancelCloseDialog" onclick="closeDialog('brandInfoDialog')">Cancel</button>
+        <div class="clear">
+        </div>
     </form>
 </div>
 <script>
@@ -88,6 +90,8 @@
         </div>
         <input class="saveButton" type="submit" name="saveButton" value="Save"/>
         <button type='button' class="cancelCloseDialog" onclick="closeDialog('textInfoDialog')">Cancel</button>
+        <div class="clear">
+        </div>
     </form>
 </div>
 <script>
@@ -110,7 +114,7 @@
             <button id='changeBrandInfoButton' class="changeInfoButton" onclick="
                     makeDialogTitle('brandInfoDialog', 'Изменить информацию');
                     resetAndShowDialog('addNewBrandInfoForm','brandInfoDialog');
-                    makeBrandInfoValues('<?php echo $data['brandInfo'][0]['name']; ?>',
+                    makeBrandInfoValues('<?php echo addslashes($data['brandInfo'][0]['name']); ?>',
                     '<?php echo $data['brandInfo'][0]['pictureUrl']; ?>');
                     changeFormAction('addNewBrandInfoForm','adminChangeBrand')
                     ">Change
@@ -118,8 +122,9 @@
         </td>
 
         <td>
-            <a  class ="deleteInfoButton" href="<?php echo core_route::$path . "/brands/adminDeleteBrand/name/" . $data['brandInfo'][0]['name'];?>"
-               onclick="return confirm('Are you sure you want to delete:  <?php echo $data['brandInfo'][0]['name'];?> brand? ALL DATA RELATED TO THIS BRAND WILL BE DELETED AS WELL!!!')">Delete</a>
+            <a class="deleteInfoButton"
+               href="<?php echo core_route::$path . "/brands/adminDeleteBrand/name/" . $data['brandInfo'][0]['name'];?>"
+               onclick="return confirm('Are you sure you want to delete:  <?php echo addslashes($data['brandInfo'][0]['name']);?> brand? ALL DATA RELATED TO THIS BRAND WILL BE DELETED AS WELL!!!')">Delete</a>
         </td>
 
 
@@ -136,7 +141,7 @@
          . ($data['existingCategories'][$category['name']] == 1 ? 'enabled' : 'disabled')
          . "</span>
                   <button class='changeInfoButton' onclick=\"changeCategoryState(
-                                    '" . $data['brandInfo'][0]['name'] . "',
+                                    '" . addslashes($data['brandInfo'][0]['name'] ) . "',
                                     '" . $category['name'] . "',
                                     '" . core_route::$path . "/brandCategory/adminChangeState" . "')
                             \">Change state
@@ -145,7 +150,7 @@
                                             changeFormAction('textInfoForm','adminAddItem')
                                             resetAndShowDialog('textInfoForm','textInfoDialog');
                                             makeDialogTitle('textInfoDialog', 'Добавить информацию')
-                                            assignFormValue('" . $category['name'] . "','textInfoCategory')\">
+                                            assignFormValue('" . addslashes($category['name'] ) . "','textInfoCategory')\">
                                 Добавить информацию
                   </button>
             </div>
@@ -181,11 +186,11 @@
                                 resetAndShowDialog('textInfoForm','textInfoDialog');
                                 makeTextInfoValues(
                                     '" . $info['id'] . "',
-                                    '" . $info['info'] . "',
+                                    '" . addslashes($info['info']) . "',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . $info['class'] . "'
+                                    '" . addslashes($info['class']) . "'
                                 );
                                 changeFormAction('textInfoForm','adminChangeItem')
                                \">Change</button>
@@ -218,11 +223,11 @@
                                 resetAndShowDialog('textInfoForm','textInfoDialog');
                                 makeTextInfoValues(
                                     '" . $info['id'] . "',
-                                    '" . $info['info'] . "',
+                                    '" . addslashes($info['info']) . "',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . $info['class'] . "'
+                                    '" . addslashes($info['class']) . "'
                                 );
                                 changeFormAction('textInfoForm','adminChangeItem')
                                \">Change</button>

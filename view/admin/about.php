@@ -92,11 +92,11 @@
                                 resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
-                                    '" . $info['content'] . "',
+                                    '". addslashes($info['content']) ."',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . $info['class'] . "'
+                                    '" . addslashes($info['class']) . "'
                                 );
                                 changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>
@@ -148,11 +148,11 @@
                                 resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
-                                    '" . $info['content'] . "',
+                                    '" . addslashes($info['content'] ) . "',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . $info['class'] . "'
+                                    '" . addslashes($info['class'] ) . "'
                                 );
                                 changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>

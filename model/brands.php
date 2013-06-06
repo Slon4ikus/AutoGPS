@@ -19,48 +19,53 @@ class model_brands extends core_model
         return core_addition::fetchArr($result);
     }
 
-    public static function getAllBrands() {
+    public static function getAllBrands()
+    {
         $query = "SELECT * FROM brands ORDER BY brands.name";
         $result = self::doQuery($query);
         return core_addition::fetchArr($result);
-       }
+    }
 
-    public static function selectFirstBrand() {
+    public static function selectFirstBrand()
+    {
         $query = "SELECT * FROM `brands` LIMIT 0, 1";
         $result = self::doQuery($query);
         return core_addition::fetchArr($result);
     }
 
-    public static function selectBrand($brand) {
+    public static function selectBrand($brand)
+    {
         $query = "SELECT * FROM `brands` WHERE brands.name = '$brand'";
         $result = self::doQuery($query);
         return core_addition::fetchArr($result);
     }
 
-    public static function addNewBrand($name, $pictureUrl) {
-         $name = htmlspecialchars($name, ENT_QUOTES);
-         $pictureUrl = htmlspecialchars($pictureUrl, ENT_QUOTES);
-         $command = "INSERT INTO `brands`(`name`, `pictureUrl`)
+    public static function addNewBrand($name, $pictureUrl)
+    {
+        $name = htmlspecialchars($name, ENT_QUOTES);
+        $pictureUrl = htmlspecialchars($pictureUrl, ENT_QUOTES);
+        $command = "INSERT INTO `brands`(`name`, `pictureUrl`)
                      VALUES ('$name', '$pictureUrl')";
-         core_model::upDate($command);
-         self::checkForErrors();
+        core_model::upDate($command);
+        self::checkForErrors();
     }
 
-    public static function changeBrandInfo($oldName, $newName, $pictureUrl) {
-         $newName = htmlspecialchars($newName, ENT_QUOTES);
-         $pictureUrl = htmlspecialchars($pictureUrl, ENT_QUOTES);
-         $command = "UPDATE `brands` SET
+    public static function changeBrandInfo($oldName, $newName, $pictureUrl)
+    {
+        $newName = htmlspecialchars($newName, ENT_QUOTES);
+        $pictureUrl = htmlspecialchars($pictureUrl, ENT_QUOTES);
+        $command = "UPDATE `brands` SET
                      `name` = '$newName' ,
                      `pictureUrl` = '$pictureUrl'
                      WHERE `name`='$oldName'";
         core_model::upDate($command);
     }
 
-    public static function deleteBrand($name) {
+    public static function deleteBrand($name)
+    {
         $command = "DELETE FROM brands WHERE name='$name'";
         self::upDate($command);
     }
-
 
 
 }

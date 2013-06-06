@@ -9,7 +9,8 @@
 
 class model_brandCategory extends core_model
 {
-    public static function checkIfExist($brand, $category) {
+    public static function checkIfExist($brand, $category)
+    {
         $query = "SELECT *
                   FROM brands_categories
                   WHERE brand_name = '$brand' AND category_name = '$category'";
@@ -19,12 +20,14 @@ class model_brandCategory extends core_model
         return true;
     }
 
-    public static function deleteRow($brand, $category) {
-         $command = "DELETE FROM brands_categories WHERE brand_name = '$brand' AND category_name = '$category'";
+    public static function deleteRow($brand, $category)
+    {
+        $command = "DELETE FROM brands_categories WHERE brand_name = '$brand' AND category_name = '$category'";
         self::upDate($command);
     }
 
-    public static function addRow($brand, $category) {
+    public static function addRow($brand, $category)
+    {
         $command = "INSERT INTO `brands_categories` (
             `id` ,
             `brand_name` ,

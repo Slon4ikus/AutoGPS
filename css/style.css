@@ -1,44 +1,53 @@
-.clear{
+.clear {
     clear: both;
 }
+
 .hidden {
     display: none;
 }
-body{
+
+body {
     font-family: 'Roboto Slab', serif;
 }
-.headerContainer{
+
+.headerContainer {
     background-color: #06063f;
 }
-.headerContainer2{
-  background-image: url("../images/template/header.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 1024px;
-  margin: 0 auto;
+
+.headerContainer2 {
+    background-image: url("../images/template/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1024px;
+    margin: 0 auto;
 }
-.headerContent{
-    
+
+.headerContent {
+
 }
-.mainContent{
-   width: 964px;
-   margin: 0 auto;
-   padding: 20px 30px 30px 30px;
-   background-color: #EDEDED;
-   min-height: 1000px;
+
+.mainContent {
+    width: 964px;
+    margin: 0 auto;
+    padding: 20px 30px 30px 30px;
+    background-color: #EDEDED;
+    min-height: 1000px;
 }
+
 .headerHat {
     float: left;
 }
-.logo{
-   display: block;
-   width: 197px;
-   height: 101px;
-   background-image: url(../images/template/logo.png);
-   background-repeat: no-repeat;
-   margin: 0px 0px 0px 20px;
+
+.logo {
+    display: block;
+    width: 197px;
+    height: 101px;
+    background-image: url(../images/template/logo.png);
+    background-repeat: no-repeat;
+    margin: 0px 0px 0px 20px;
 }
-.slogan{
+
+.slogan {
     float: left;
     font-size: 20px;
     font-style: italic;
@@ -46,49 +55,59 @@ body{
     font-weight: bold;
     margin: 0px 0px 5px 20px;
 }
-.headerPhone{
+
+.headerPhone {
     float: left;
     margin: 30px 0px 0px 70px;
 }
+
 .numberFirstPart {
     color: #AAAAAA;
     font-size: 26px;
     font-weight: bold;
 }
+
 .numberSecondPart {
     color: #CCCCCC;
     font-size: 30px;
     font-weight: bold;
 }
+
 #headerSlider {
     float: right;
-    width:400px;
+    width: 400px;
     max-height: 130px;
     overflow: hidden;
     margin: 0px 20px 0px 0px;
 }
+
 .sliderImage {
     float: right;
 }
-.accountOptions a{
+
+.accountOptions a {
     margin: 0px 10px 0px 0px;
 }
-.logDiv{
-    float:right;
+
+.logDiv {
+    float: right;
     padding: 10px 0px 0px 0px;
 }
-.helloMessage{
+
+.helloMessage {
     font-size: 14px;
     font-weight: bold;
     margin: 0px 0px 10px 0px;
 }
-.navigation{
+
+.navigation {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-color: #666688;
     background-repeat: repeat;
 }
-.navigation a{
+
+.navigation a {
     display: block;
     float: left;
     margin: 10px 0px 10px 0px;
@@ -96,8 +115,11 @@ body{
     background-repeat: repeat;
     border-left: 1px solid #AAAAAA;
 }
-.navigation a:first-child{
+.navigation a:first-child {
     border-left: none;
+}
+.navigation a:hover {
+    color: #AAAAAA;
 }
 .systemMessage {
     padding: 20px 0px;
@@ -106,23 +128,27 @@ body{
     font-size: 14px;
 }
 
-.loginLabelDiv, .registrationLabelDiv{
+.loginLabelDiv, .registrationLabelDiv {
     float: left;
     margin: 20px 20px 0px 0px;
 }
-.loginLabelDiv label, .registrationLabelDiv label{
+
+.loginLabelDiv label, .registrationLabelDiv label {
     display: block;
     margin: 20px 0px 0px 0px;
 }
-.loginInputDiv, .registrationInputDiv{
+
+.loginInputDiv, .registrationInputDiv {
     float: left;
     margin: 20px 20px 0px 0px;
 }
-.loginInput, .registrationInput{
+
+.loginInput, .registrationInput {
     display: block;
     border: 2px solid #666666;
     margin: 20px 0px 0px 0px;
 }
+
 .submit {
     margin: 20px 0px 0px 0px;
     min-width: 50px;
@@ -134,40 +160,50 @@ body{
 .someInfo {
     margin: 20px 0px 0px 0px;
 }
+
 .importantInfo {
-   margin: 20px 0px 0px 0px;
-   font-weight: bold;
+    margin: 20px 0px 0px 0px;
+    font-weight: bold;
 }
+
 .italicInfo {
     margin: 20px 0px 0px 0px;
     font-style: italic;
 }
-.someImage  {
-    display:block;
+
+.someImage {
+    display: block;
     margin: 30px 32px 0px 0px;
 }
+
 /**********************************************brands************************************/
-.brandList{
+.brandList {
     border: 3px solid #AAAAAA;
     border-radius: 10px;
     padding: 30px;
 }
-.brandList li{
+
+.brandList li {
     padding: 10px 15px 10px 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     float: left;
     display: block;
-    margin: 0px 100px 40px 0px;
+    margin: 20px 40px 30px 50px;
     text-align: center;
+    height: 234px;
+    width: 174px;
+    overflow: hidden;
 }
+
 .brandImage {
-    
+
 }
+
 .brandName {
     font-weight: bold;
     font-size: 20px;
     color: #666666;
-    margin:  30px 0px 20px 0px;;
+    margin: 30px 0px 20px 0px;;
 }
 
 /*******************************************info**************************************/
@@ -176,16 +212,26 @@ body{
     font-size: 20px;
     margin: 0px 0px 20px 0px;
 }
-.gpsInfoDiv, .russificationInfoDiv, .otherInfoDiv{
-    margin: 0px 0px 30px 0px;
+
+.gpsInfoDiv, .russificationInfoDiv, .otherInfoDiv {
+    margin: 0px 0px 50px 0px;
 }
-.gpsPrimaryText, .gpsSecondaryText, .rusPrimaryText, .rusSecondaryText, .otherPrimartText, .otherSecondaryText{
+.gpsInfoDiv h2, .russificationInfoDiv h2, .otherInfoDiv h2 {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0px 0px 25px 0px;
+}
+
+.gpsPrimaryText, .gpsSecondaryText, .rusPrimaryText, .rusSecondaryText, .otherPrimartText, .otherSecondaryText {
     margin: 0px 0px 10px 0px;
 }
 
 /*****************************************contacts*******************************************/
 .contactsPhone, .contactsAdress, .contactsEmail {
     margin: 0px 0px 20px 0px;
+}
+#googleMap {
+    border: 1px solid black;
 }
 
 
