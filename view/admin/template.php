@@ -31,6 +31,7 @@
         <div class="navigation">
             <a href="<?php echo core_route::$path . "/about/adminShow"?>">О нас</a>
             <a href="<?php echo core_route::$path . "/brands/adminList"?>">Бренды</a>
+            <a href="<?php echo core_route::$path . "/admin/account"?>">Аккаунт</a>
             <div class="clear">
             </div>
         </div>

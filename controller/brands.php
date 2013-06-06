@@ -68,6 +68,8 @@ class controller_brands extends core_controller
             if (isset($_POST['newBrandInfoName']) and isset($_POST['newBrandInfoPictureUrl']))
                 if (!core_addition::alreadyExists($_POST['newBrandInfoName'], 'brands', 'name')) {
                     model_brands::addNewBrand($_POST['newBrandInfoName'], $_POST['newBrandInfoPictureUrl']);
+                    header("Location:" . core_route::$path . "/brands/adminList/brandName/".$_POST['newBrandInfoName']);
+                    exit;
                 }
         }
         header("Location:" . core_route::$path . "/brands/adminList");
@@ -104,6 +106,8 @@ class controller_brands extends core_controller
             }
             model_brands::changeBrandInfo($_POST['newBrandInfoNameOld'], $_POST['newBrandInfoName'],
                                           $_POST['newBrandInfoPictureUrl']);
+            header("Location:" . core_route::$path . "/brands/adminList/brandName/".$_POST['newBrandInfoName']);
+            exit;
         }
         header("Location:" . core_route::$path . "/brands/adminList");
     }

@@ -27,18 +27,6 @@ body{
    background-color: #EDEDED;
    min-height: 1000px;
 }
-.footerContainer{
-    background-image: url(../images/template/asphalt.png);
-    background-repeat: repeat;
-}
-.footerContent {
-   width: 1024px;
-   margin: 0 auto;
-}   
-.footerColumn{
-    float: left;
-    margin: 40px 150px 20px 0px;
-}
 .headerHat {
     float: left;
 }
@@ -144,9 +132,20 @@ body{
 
 /**********************************************about************************************/
 .someInfo {
-    margin: 10px;
+    margin: 20px 0px 0px 0px;
 }
-
+.importantInfo {
+   margin: 20px 0px 0px 0px;
+   font-weight: bold;
+}
+.italicInfo {
+    margin: 20px 0px 0px 0px;
+    font-style: italic;
+}
+.someImage  {
+    display:block;
+    margin: 30px 32px 0px 0px;
+}
 /**********************************************brands************************************/
 .brandList{
     border: 3px solid #AAAAAA;

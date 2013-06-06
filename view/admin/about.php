@@ -1,13 +1,13 @@
-<button id="addNewAboutInfoButton" onclick="resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
+<button id="addNewAboutInfoButton" onclick="resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                             makeDialogTitle('aboutInfoDialog', 'Добавить информацию')">
     Добавить инфо &ldquo;О нас&rdquo;
 </button>
 <div class="clear">
 </div>
 <div id="aboutInfoDialog">
-    <p id="errorMessage"></p>
+    <p class="errorMessage"></p>
 
-    <form id="addNewAboutInfoForm" class="editAboutInfoForm" name="addNewAboutInfoForm"
+    <form id="aboutInfoForm" class="editAboutInfoForm" name="aboutInfoForm"
           action="<?php echo core_route::$path;?>/about/adminAddItem"
           onsubmit="return checkAboutInfoForm()" method="post">
         <input id="newAboutInfoId" name="newAboutInfoId" type="hidden">
@@ -47,8 +47,10 @@
             <label for="newAboutInfoClass">Класс:</label>
             <input id="newAboutInfoClass" class="editAboutInfoInput" name="newAboutInfoClass" value="someInfo">
         </div>
-        <button type='button' class="cancelCloseDialog" onclick="closeDialog('aboutInfoDialog')">Cancel</button>
         <input class="saveButton" type="submit" name="saveButton" value="Save"/>
+        <button type='button' class="cancelCloseDialog" onclick="closeDialog('aboutInfoDialog')">Cancel</button>
+        <div class="clear">
+        </div>
     </form>
 </div>
 <script>
@@ -87,7 +89,7 @@
                               <td>
                                 <button class='changeInfoButton' onclick=\"
                                 makeDialogTitle('aboutInfoDialog', 'Изменить информацию');
-                                resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
+                                resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
                                     '" . $info['content'] . "',
@@ -96,7 +98,7 @@
                                     '" . $info['enabled'] . "',
                                     '" . $info['class'] . "'
                                 );
-                                changeFormAction('addNewAboutInfoForm','adminChangeItem')
+                                changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>
                               </td>
                               <td>
@@ -143,7 +145,7 @@
                               <td>" . $info['class'] . "</td>
                               <td>
                                 <button class='changeInfoButton' onclick=\"
-                                resetAndShowDialog('addNewAboutInfoForm','aboutInfoDialog');
+                                resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
                                     '" . $info['content'] . "',
@@ -152,7 +154,7 @@
                                     '" . $info['enabled'] . "',
                                     '" . $info['class'] . "'
                                 );
-                                changeFormAction('addNewAboutInfoForm','adminChangeItem')
+                                changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>
                               </td>
                               <td>

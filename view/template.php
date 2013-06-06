@@ -66,33 +66,6 @@
         <?php include 'view/'.$content; ?>
     </div>
 
-    <div class="footerContainer">
-        <div class="footerContent">
-            <div class="footerColumn">
-                <ul>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                </ul>
-            </div>
-            <div class="footerColumn">
-                <ul>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                </ul>
-            </div>
-            <div class="footerColumn">
-                <ul>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                    <li>lorem ipsum</li>
-                </ul>
-            </div>
-            <div class="clear">
-            </div>
-        </div>
-    </div>
 
 
 </body>
