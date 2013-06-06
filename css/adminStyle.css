@@ -1,0 +1,195 @@
+.clear{
+    clear: both;
+}
+.headerContainer {
+     background-color: #9999CC;
+}
+.header{
+    width: 1024px;
+    margin: 0 auto;
+    height: 158px;
+}
+.welcomeAdmin{
+    font-weight: bold;
+    font-size: 25px;
+    float: left;
+}
+.logout{
+    display: block;
+    float: right;
+    margin: 40px 0px 0px 0px;
+    font-size: 19px;
+}
+.navigation{
+    margin: 40px 0px 0px 0px;
+}
+.navigation a{
+    display: block;
+    float: left;
+    background-color: #888888;
+    padding: 10px;
+    margin: 0px 20px 0px 0px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #666666;
+}
+.content{
+    width: 1024px;
+    min-height: 1000px;
+    margin: 0 auto;
+    background-color: #EDEDED;
+    padding: 15px 15px 0px 15px;
+}
+
+/* about */
+.divForBorder{
+    border-top: 3px solid black;
+}
+#addNewAboutInfoButton, #addNewBrandInfoButton {
+    float: right;
+    height: 30px;
+    border: 1px solid black;
+    padding: 0px 5px 0px 5px;
+    background-color: #F98719;
+}
+.infoType {
+    font-style: italic;
+    font-size: 17px;
+}
+.editAboutInfoDiv, .editBrandInfoDiv, .dialogFormDiv{
+    margin: 10px 0px 10px 0px;
+}
+.editAboutInfoDiv label, .editBrandInfoDiv label, .dialogFormDiv label  {
+    margin: 0px 20px 0px 0px;
+    display: block;
+    float: left;
+    width:125px;
+    text-align: left;
+}
+.cancelCloseDialog {
+    display: block;
+    float: right;
+    border: 1px solid red;
+    padding: 3px 10px;
+    background-color: #AAAAAA;
+    cursor: pointer;
+    margin: 0px 20px 20px 0px;
+}
+.saveButton {
+    display: block;
+    float: right;
+    border: 2px solid green;
+    padding: 3px 10px;
+    background-color: #AAAAAA;
+    cursor: pointer;
+    margin: 0px 20px 20px 0px;
+}
+.editAboutInfoTextArea, .editAboutInfoSelect, .editAboutInfoInput, .editBrandInfoInput,
+.dialogFormTextArea, .dialogFormSelect, .dialogFormInput {
+    border: 1px solid black;
+}
+.editAboutInfoTextArea, .dialogFormTextArea {
+    width: 440px;
+    max-width: 740px;
+    height: 130px
+}
+.aboutTable, .brandInfoTable, .infoTable {
+    margin: 0px 0px 10px 0px;
+}
+.aboutTable thead, .brandInfoTable thead, .infoTable thead{
+   padding: 20px;
+   font-weight: bold;
+   font-size: 20px;
+}
+.aboutTable td, .brandInfoTable td, .infoTable td{
+   padding: 7px 15px 7px 15px;
+   max-width: 300px;
+   overflow: hidden;
+}
+.rowInfo{
+    border-bottom: 1px solid #AAAAAA;
+}
+.changeInfoButton{
+    cursor: pointer;
+    padding: 2px 6px;
+    background-color: #D9D919;
+    border: 1px solid #666666;
+}
+.deleteInfoButton{
+    cursor: pointer;
+    padding: 2px 6px;
+    background-color: #EE2C2C;
+    border: 1px solid #666666;
+}
+.submit {
+    margin: 20px 0px 0px 0px;
+    min-width: 50px;
+    min-height: 20px;
+    border: 2px solid #555555;
+}
+
+/***************************************** brand *******************************************************************/
+#selectBrand {
+    margin: 0px 0px 30px 0px;
+    border:  1px solid #D9A719;
+}
+.categoryInfoHead {
+    font-size: 18px;
+    margin: 0px 0px 20px 0px;
+}
+.brandStatus {
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0px 7px 0px 5px;
+}
+.addInfoButton{
+    cursor: pointer;
+    padding: 2px 6px;
+    background-color: #00CD00;
+    border: 1px solid #666666;
+    margin: 0px 0px 0px 10px;
+}
+.brandInfoTable{
+    padding: 0px 0px 10px 0px;
+    margin: 0px 0px 50px 0px;
+    border-bottom: 1px solid black;
+}
+.category{
+    color: blue;
+    margin: 20px 0px 10px 0px;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+.infoStatus {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0px 0px;
+    padding: 10px 0px 0px 0px;
+}
+/***************************************** account *******************************************************************/
+.accountForm{
+    margin: 20px 0px 0px 0px;
+}
+.accountFormDiv{
+     margin: 10px 0px 10px 0px;
+}
+.accountForm label  {
+    margin: 0px 20px 0px 0px;
+    display: block;
+    float: left;
+    width:150px;
+    text-align: left;
+}
+.accountInput{
+     border: 1px solid black;
+}
+.errorMessage{
+    color: red;
+    font-size: 16px;
+}
+.systemMessage{
+    background: yellow;
+    width: 200px;
+}
