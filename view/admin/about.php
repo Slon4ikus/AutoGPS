@@ -1,5 +1,6 @@
 <button id="addNewAboutInfoButton" onclick="resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
-                                            makeDialogTitle('aboutInfoDialog', 'Добавить информацию')">
+                                            makeDialogTitle('aboutInfoDialog', 'Добавить информацию')
+                                            changeFormAction('aboutInfoForm','adminAddItem')">
     Добавить инфо &ldquo;О нас&rdquo;
 </button>
 <div class="clear">
@@ -92,11 +93,11 @@
                                 resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
-                                    '". addslashes($info['content']) ."',
+                                    '".  str_replace('&#039;', '\\\'', $info['content'])  ."',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . addslashes($info['class']) . "'
+                                    '" . $info['class'] . "'
                                 );
                                 changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>
@@ -148,11 +149,11 @@
                                 resetAndShowDialog('aboutInfoForm','aboutInfoDialog');
                                 makeAboutInfoValues(
                                     '" . $info['id'] . "',
-                                    '" . addslashes($info['content'] ) . "',
+                                    '" . str_replace('&#039;', '\\\'', $info['content']) . "',
                                     '" . $info['type'] . "',
                                     '" . $info['order'] . "',
                                     '" . $info['enabled'] . "',
-                                    '" . addslashes($info['class'] ) . "'
+                                    '" . $info['class']  . "'
                                 );
                                 changeFormAction('aboutInfoForm','adminChangeItem')
                                 \">Change</button>

@@ -127,9 +127,8 @@ class model_info extends core_model
     //parameters: record's info(id(int), content(string), type(string), order(int), status(tinyint), class(string)
     static function adminChangeAboutInfo($id, $content, $type, $order, $enabled, $class)
     {
-        $content = htmlspecialchars($content, ENT_NOQUOTES);
+        $content = htmlspecialchars($content, ENT_QUOTES);
         $content = core_addition::replaceBreaks($content);
-        $content = self::$mysqli->real_escape_string($content);
         $type = htmlspecialchars($type, ENT_QUOTES);
         $class = htmlspecialchars($class, ENT_QUOTES);
         $command = "UPDATE `about` SET

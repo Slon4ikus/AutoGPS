@@ -225,6 +225,9 @@ body {
 .gpsPrimaryText, .gpsSecondaryText, .rusPrimaryText, .rusSecondaryText, .otherPrimartText, .otherSecondaryText {
     margin: 0px 0px 10px 0px;
 }
+.primary_image, .secondary_image {
+    display: block;
+}
 
 /*****************************************contacts*******************************************/
 .contactsPhone, .contactsAdress, .contactsEmail {

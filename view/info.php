@@ -49,7 +49,7 @@ if ($data['existingCategories']['russification'] == true) {
     echo "</div>
     <div class='rusSecondaryImages'>";
     foreach ($data['mainInfo']['russification']['secondary_image'] as $rusInfo) {
-        echo "<img class='secondary_image '".$rusInfo['class']."src=" . core_route::$path .
+        echo "<img class='secondary_image ".$rusInfo['class']."' src=" . core_route::$path .
              "/images/brands/" . $data['brand'] . "/russification/" . $rusInfo['info'] . ">";
     }
     echo "</div>
@@ -63,20 +63,20 @@ if ($data['existingCategories']['other'] == true) {
         echo "<p class='primary_text ".$otherInfo['class']."'>" . $otherInfo['info'] . "</p>";
     }
     echo "</div>
-    <div class='rusPrimaryImages'>";
+    <div class='otherPrimaryImages'>";
     foreach ($data['mainInfo']['other']['primary_image'] as $otherInfo) {
         echo "<img class='primary_image ".$otherInfo['class']."' src=" . core_route::$path .
              "/images/brands/" . $data['brand'] . "/other/" . $otherInfo['info'] . ">";
     }
     echo "</div>
-    <div class='rusSecondaryText'>";
+    <div class='otherSecondaryText'>";
     foreach ($data['mainInfo']['other']['secondary_text'] as $otherInfo) {
         echo "<p class='secondary_text ".$otherInfo['class']."'>" . $otherInfo['info'] . "</p>";
     }
     echo "</div>
-    <div class='rusSecondaryImages'>";
+    <div class='otherSecondaryImages'>";
     foreach ($data['mainInfo']['other']['secondary_image'] as $otherInfo) {
-        echo "<img class='secondary_image '".$otherInfo['class']."src=" . core_route::$path .
+        echo "<img class='secondary_image ".$otherInfo['class']."' src=" . core_route::$path .
              "/images/brands/" . $data['brand'] . "/other/" . $otherInfo['info'] . ">";
     }
     echo "</div>

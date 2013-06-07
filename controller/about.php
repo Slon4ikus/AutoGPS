@@ -9,7 +9,7 @@ class controller_about extends core_controller
     }
     // description: page "О нас" admin controller
     function adminShow()
-    {
+    {   
         if (!core_auth::isAdmin()) {
             core_addition::setSessionMessage("Страница админа", "У вас нет на это прав");
             header("Location:" . core_route::$path . "/admin/index");
